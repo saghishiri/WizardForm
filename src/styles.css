@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+.link{
+  cursor: pointer;
+}
+.next-button{
+  color: #FFF;
+  background-color: #5d78ff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.next-button:hover{
+  color: #FFF;
+  background-color: #4a5fca;
+}
+.border-radius-3{
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+label{
+  color: #7e7f90;
+}
+.text-blue-grey{
+  color: #546e7a;
+}
