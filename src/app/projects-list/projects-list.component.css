@@ -1,0 +1,28 @@
+.badge-success{
+  background-color: #e6f8f3;
+  color: #0abb87;
+}
+.badge-danger{
+  background-color: #ffebf1;
+  color: #ea64a2;
+}
+.badge-primary{
+  background-color: #eef1ff;
+  color: #5867dd;
+}
+.badge-warning{
+  background-color: #fff8e8;
+  color: #ffd359;
+}
+.text-success{
+  color: #27b383!important;
+}
+.text-danger{
+  color: #ec3b75!important;
+}
+.text-primary{
+  color: #5763ae!important;
+}
+.font-xs{
+  font-size: 0.6em;
+}

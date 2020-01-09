@@ -1,0 +1,57 @@
+<table class="table text-secondary">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Company</th>
+    <th scope="col">Country</th>
+    <th scope="col">Ship Date</th>
+    <th scope="col">Assigned</th>
+    <th scope="col">Status</th>
+    <th scope="col">Type</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let project of projects$ | async">
+    <th scope="row">1</th>
+    <td class="align-middle">
+      <div class="d-inline-block align-top mr-2">
+        <img class="rounded" [src]="project.logo" width="50px">
+      </div>
+      <div class="d-inline-block">
+        <h6 class="mb-0">
+          {{project.company_name}}
+        </h6>
+        <div>
+          {{project.technologies}}
+        </div>
+      </div>
+
+    </td>
+    <td class="align-middle">{{project.country}}</td>
+    <td class="align-middle">{{project.ship_date}}</td>
+    <td class="align-middle">
+      <div class="d-inline-block align-top mr-2">
+        <img class="rounded-circle" [src]="project.image">
+      </div>
+      <div class="d-inline-block">
+        <h6 class="mb-0">{{project.assigned.name}}</h6>
+        <div>{{project.assigned.role}}</div>
+      </div>
+    </td>
+    <td class="align-middle">
+      <span *ngIf="project.status === 'success'" class="badge badge-success py-2 px-3">Success</span>
+      <span *ngIf="project.status === 'done'" class="badge badge-danger py-2 px-3">Done</span>
+      <span *ngIf="project.status === 'processing'" class="badge badge-danger py-2 px-3">Processing</span>
+      <span *ngIf="project.status === 'canceled'" class="badge badge-warning py-2 px-3">Canceled</span>
+      <span *ngIf="project.status === 'pending'" class="badge badge-primary py-2 px-3">Pending</span>
+    </td>
+    <td class="align-middle">
+      <span *ngIf="project.type === 'customer'" class="text-primary"><i class="fas fa-circle font-xs"></i>Customer</span>
+      <span *ngIf="project.type === 'staff'" class="text-success"><i class="fas fa-xs fa-circle font-xs"></i>Staff</span>
+      <span *ngIf="project.type === 'company'" class="text-danger"><i class="fas fa-xs fa-circle font-xs"></i>Company</span>
+    </td>
+    <td class="align-middle">...</td>
+  </tr>
+  </tbody>
+</table>
