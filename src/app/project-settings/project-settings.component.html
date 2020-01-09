@@ -1,0 +1,64 @@
+<div class="p-5">
+  <form [formGroup]="projectSettingsForm" (ngSubmit)="onSubmit()" novalidate>
+    <h5 class="text-secondary mb-5">
+      Project Settings:
+    </h5>
+    <div class="form-group row">
+      <label for="emailAddress" class="col-sm-2 col-form-label">Email Address</label>
+      <div class="col-sm-10">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">@</div>
+          </div>
+          <input type="email" class="form-control" id="emailAddress" placeholder="" required formControlName="email">
+        </div>
+        <small id="emailAddressHelpText" class="form-text text-muted">
+          Email will not be publicly displayed. <a class="text-info link">Learn more.</a>
+        </small>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="languageSelect" class="col-sm-2 col-form-label">Language</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="languageSelect" required formControlName="language">
+          <option *ngFor="let language of languages$ | async" [value]="language.name"
+          >{{language.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="TimeZoneSelect" class="col-sm-2 col-form-label">Time Zone</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="TimeZoneSelect" required formControlName="timeZone">
+          <option *ngFor="let timeZone of timeZones$ | async" [value]="timeZone.name">{{timeZone.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row mb-5">
+      <label for="TimeZoneSelect" class="col-sm-2 col-form-label">Communication</label>
+      <div class="col-sm-10">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="emailCheckbox" value="email">
+          <label class="form-check-label" for="emailCheckbox">Email</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="smsCheckbox" value="SMS">
+          <label class="form-check-label" for="smsCheckbox">SMS</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="phoneCheckbox" value="phone">
+          <label class="form-check-label" for="phoneCheckbox">Phone</label>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-group row mt-4">
+      <div class="col-sm-12 float-right">
+        <button type="submit" [disabled]="!projectSettingsForm.valid" class="btn next-button float-right">NEXT STEP</button>
+        <button type="button" (click)="backTo()" class="btn btn-outline-secondary float-left border-radius-3">PREVIOUS</button>
+      </div>
+    </div>
+  </form>
+</div>
