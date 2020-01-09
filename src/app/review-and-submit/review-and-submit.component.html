@@ -1,0 +1,48 @@
+<div class="px-2 py-5">
+
+  <h5 class="text-dark mb-5">
+    Review your Details and Submit
+  </h5>
+
+  <div class="text-secondary">
+    <h6>Project Details</h6>
+    <div>Some name</div>
+    <div>
+      Phone: <span>+{{project.phone}}</span>
+    </div>
+    <div>
+      Email: <span>{{project.email}}</span>
+    </div>
+  </div>
+  <hr>
+
+  <div class="text-secondary">
+    <h6>Delivery Address</h6>
+    <div>{{project.addressLine1}}</div>
+    <div>{{project.addressLine2}}</div>
+    <div>{{project.country}}, {{project.postcode}}, {{project.state}}, {{project.country}}</div>
+  </div>
+  <hr>
+
+  <div class="text-secondary">
+    <h6>Payment Details</h6>
+    <div>
+      <span>Card Number: </span><span>xxxx xxxx xxxx xxxx 1111</span>
+    </div>
+    <div>
+      <span>Card Name: </span><span>{{project.customer_name}}</span>
+    </div>
+    <div>
+      <span>Card Expiry: </span><span>01/21</span>
+    </div>
+  </div>
+  <hr>
+
+  <div class="form-group row mt-4">
+    <div class="col-sm-12 float-right">
+      <button type="button" (click)="onSubmit()" class="btn submit-button float-right">SUBMIT</button>
+      <button type="button" (click)="backTo()" class="btn btn-outline-secondary float-left border-radius-3">PREVIOUS</button>
+    </div>
+  </div>
+</div>
+<pre>{{project | json}}</pre>
