@@ -1,0 +1,73 @@
+<div class="p-5">
+  <form [formGroup]="projectDetailsForm" (ngSubmit)="onSubmit()" novalidate>
+    <h5 class="text-secondary mb-5">
+      Project Details:
+    </h5>
+    <div class="form-group row">
+      <label for="projectName" class="col-sm-2 col-form-label">Project Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="projectName" required formControlName="project_name">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="projectOwner" class="col-sm-2 col-form-label">Project Owner</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="projectOwner" required formControlName="project_owner">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="customerName" class="col-sm-2 col-form-label">Customer Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="customerName" required formControlName="customer_name">
+        <small id="customerNameHelpText" class="form-text text-muted">
+          If you want your invoices addressed to a company Leave blank to use your full name.
+        </small>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="contactPhone" class="col-sm-2 col-form-label">Contact Phone</label>
+      <div class="col-sm-10 mb-2">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fas fa-phone"></i></div>
+          </div>
+          <input type="text" class="form-control" id="contactPhone" placeholder="" required formControlName="phone">
+        </div>
+        <small id="contactPhoneHelpText" class="form-text text-muted">
+          We'll never share your email with anyone else.
+        </small>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="emailAddress" class="col-sm-2 col-form-label">Email Address</label>
+      <div class="col-sm-10">
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">@</div>
+          </div>
+          <input type="email" class="form-control" id="emailAddress" placeholder="" required formControlName="email">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row mb-5">
+      <label for="companySite" class="col-sm-2 col-form-label">Company Site</label>
+      <div class="col-sm-10">
+        <div class="input-group">
+          <input type="text" class="form-control" id="companySite" placeholder="" required formControlName="company_site">
+          <div class="input-group-prepend">
+            <div class="input-group-text">.com</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-group row mt-4">
+      <div class="col-sm-12 float-right">
+        <button type="submit" [disabled]="!projectDetailsForm.valid" class="btn next-button float-right">NEXT STEP</button>
+      </div>
+    </div>
+  </form>
+</div>
