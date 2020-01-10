@@ -24,17 +24,23 @@ export class ProjectSettingsComponent implements OnInit {
   timeZones$: Observable<any> = this.http.get('/api/timeZones');
 
   backTo() {
-    this.router.navigateByUrl('/project-details');
+    this.router.navigateByUrl('/wizard/project-details');
   }
   onSubmit() {
     this.store.dispatch(new Wizard.AddProject(this.projectSettingsForm.value));
-    this.router.navigateByUrl('/delivery-details');
+    this.router.navigateByUrl('/wizard/delivery-details');
   }
   constructor(private http: HttpClient, private router: Router, private store: Store<any>) { }
 
   ngOnInit() {
+    this.store.dispatch(new Wizard.ActiveRoute({activeRoute: 2}));
+
     this.store.select('project').subscribe((state => {
-      this.project = state;
+      this.projectSettingsForm = new FormGroup({
+        email: new FormControl(state.email),
+        language: new FormControl(state.language),
+        timeZone: new FormControl(state.timeZone)
+      });
     }));
   }
 
