@@ -16,14 +16,15 @@ export class ReviewAndSubmitComponent implements OnInit {
     this.router.navigateByUrl('/projects');
   }
   backTo() {
-    this.router.navigateByUrl('/delivery-details');
+    this.router.navigateByUrl('/wizard/delivery-details');
   }
   constructor(private router: Router, private store: Store<any>) { }
 
   ngOnInit() {
+    this.store.dispatch(new Wizard.ActiveRoute({activeRoute: 4}));
+
     this.store.select('project').subscribe((state => {
       this.project = state;
-      console.log('state', state);
     }));
   }
 

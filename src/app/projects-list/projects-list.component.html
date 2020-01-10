@@ -1,7 +1,12 @@
 <table class="table text-secondary">
   <thead>
   <tr>
-    <th scope="col">#</th>
+    <th scope="col">
+      <div class="custom-control custom-checkbox mr-sm-2">
+        <input type="checkbox" class="custom-control-input" id="selectAll">
+        <label class="custom-control-label" for="selectAll"></label>
+      </div>
+    </th>
     <th scope="col">Company</th>
     <th scope="col">Country</th>
     <th scope="col">Ship Date</th>
@@ -13,10 +18,15 @@
   </thead>
   <tbody>
   <tr *ngFor="let project of projects$ | async">
-    <th scope="row">1</th>
+    <th class="align-middle" scope="row">
+      <div class="custom-control custom-checkbox mr-sm-2">
+      <input type="checkbox" class="custom-control-input" id="{{project.id}}" value="project.id">
+      <label class="custom-control-label" for="{{project.id}}"></label>
+    </div>
+    </th>
     <td class="align-middle">
       <div class="d-inline-block align-top mr-2">
-        <img class="rounded" [src]="project.logo" width="50px">
+        <img class="rounded" [src]="project.logo" width="40px">
       </div>
       <div class="d-inline-block">
         <h6 class="mb-0">
@@ -32,7 +42,7 @@
     <td class="align-middle">{{project.ship_date}}</td>
     <td class="align-middle">
       <div class="d-inline-block align-top mr-2">
-        <img class="rounded-circle" [src]="project.image">
+        <img class="rounded-circle" width="40px" [src]="project.image">
       </div>
       <div class="d-inline-block">
         <h6 class="mb-0">{{project.assigned.name}}</h6>
@@ -47,9 +57,9 @@
       <span *ngIf="project.status === 'pending'" class="badge badge-primary py-2 px-3">Pending</span>
     </td>
     <td class="align-middle">
-      <span *ngIf="project.type === 'customer'" class="text-primary"><i class="fas fa-circle font-xs"></i>Customer</span>
-      <span *ngIf="project.type === 'staff'" class="text-success"><i class="fas fa-xs fa-circle font-xs"></i>Staff</span>
-      <span *ngIf="project.type === 'company'" class="text-danger"><i class="fas fa-xs fa-circle font-xs"></i>Company</span>
+      <span *ngIf="project.type === 'customer'" class="text-primary"><i class="fas fa-circle font-xs"></i> Customer</span>
+      <span *ngIf="project.type === 'staff'" class="text-success"><i class="fas fa-xs fa-circle font-xs"></i> Staff</span>
+      <span *ngIf="project.type === 'company'" class="text-danger"><i class="fas fa-xs fa-circle font-xs"></i> Company</span>
     </td>
     <td class="align-middle">...</td>
   </tr>

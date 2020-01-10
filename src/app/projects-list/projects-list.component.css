@@ -1,3 +1,6 @@
+table{
+  font-size: 13px;
+}
 .badge-success{
   background-color: #e6f8f3;
   color: #0abb87;
@@ -19,9 +22,6 @@
 }
 .text-danger{
   color: #ec3b75!important;
-}
-.text-primary{
-  color: #5763ae!important;
 }
 .font-xs{
   font-size: 0.6em;

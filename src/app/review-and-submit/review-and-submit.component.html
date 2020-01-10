@@ -6,7 +6,7 @@
 
   <div class="text-secondary">
     <h6>Project Details</h6>
-    <div>Some name</div>
+    <div>{{project.projectName}}</div>
     <div>
       Phone: <span>+{{project.phone}}</span>
     </div>
@@ -30,7 +30,7 @@
       <span>Card Number: </span><span>xxxx xxxx xxxx xxxx 1111</span>
     </div>
     <div>
-      <span>Card Name: </span><span>{{project.customer_name}}</span>
+      <span>Card Name: </span><span>{{project.customerName}}</span>
     </div>
     <div>
       <span>Card Expiry: </span><span>01/21</span>
@@ -45,4 +45,3 @@
     </div>
   </div>
 </div>
-<pre>{{project | json}}</pre>

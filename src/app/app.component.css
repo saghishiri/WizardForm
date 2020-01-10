@@ -1,1 +1,4 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+.nav-link{
+  color: #a2a5b9;
+}

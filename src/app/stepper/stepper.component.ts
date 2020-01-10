@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+import {Store} from '@ngrx/store';
 
 @Component({
   selector: 'app-stepper',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StepperComponent implements OnInit {
 
-  constructor() { }
+  activeRoute: number;
+  constructor(private store: Store<any>) { }
 
   ngOnInit() {
+    this.store.select('project').subscribe((state => {
+      this.activeRoute = state.activeRoute;
+    }));
   }
 
 }

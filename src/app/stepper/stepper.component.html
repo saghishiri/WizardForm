@@ -1,47 +1,49 @@
-<nav class="nav justify-content-between py-4 border-bottom text-secondary">
-  <a class="nav-link active" routerLink="/wizard/project-details" routerLinkActive="active">
+<nav class="nav justify-content-between py-4 border-bottom text-light-gray">
+  <a class="nav-link" [ngClass]="{'text-primary': activeRoute === 1}" routerLinkActive="active">
     <span>
       <div class="text-center">
         <i class="fas fa-2x fa-list-alt"></i>
       </div>
       Project Details
     </span>
-
-    <span class="text-center">
+  </a>
+  <a class="nav-link py-4" [ngClass]="{'text-primary': activeRoute === 1}" routerLinkActive="active">
+      <span class="text-center">
       <i class="fas fa-chevron-right"></i>
     </span>
   </a>
-  <a class="nav-link active" routerLink="/wizard/project-settings" routerLinkActive="active">
+  <a class="nav-link" [ngClass]="{'text-primary': activeRoute === 2}" routerLinkActive="active">
     <span>
        <div class="text-center">
       <i class="fas fa-2x fa-desktop"></i>
     </div>
     Project Settings
     </span>
+  </a>
+  <a class="nav-link py-4" [ngClass]="{'text-primary': activeRoute === 2}" routerLinkActive="active">
     <span class="text-center">
       <i class="fas fa-chevron-right"></i>
     </span>
   </a>
-  <a class="nav-link active" routerLink="/wizard/delivery-details" routerLinkActive="active">
+  <a class="nav-link" [ngClass]="{'text-primary': activeRoute === 3}" routerLinkActive="active">
     <span>
        <div class="text-center">
       <i class="fas fa-2x fa-globe"></i>
     </div>
     Delivery Details
     </span>
+  </a>
+  <a class="nav-link py-4" [ngClass]="{'text-primary': activeRoute === 3}" routerLinkActive="active">
     <span class="text-center">
       <i class="fas fa-chevron-right"></i>
     </span>
   </a>
-  <a class="nav-link active" routerLink="/wizard/review" routerLinkActive="active">
+  <a class="nav-link" [ngClass]="{'text-primary': activeRoute === 4}" routerLinkActive="active">
     <span>
       <div class="text-center">
       <i class="fas fa-2x fa-sticky-note"></i>
     </div>
     Review and Submit
-    </span>
-    <span class="text-center">
-      <i class="fas fa-chevron-right"></i>
     </span>
   </a>
 </nav>
